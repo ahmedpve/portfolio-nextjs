@@ -2,34 +2,30 @@ export const semanticTokens = {
   colors: {
     bg: {
       body: {
-        _light: "neutral.50",
-        _dark: "blackAlpha.900",
-      },
-      clear: {
-        _light: "white",
-        _dark: "blackAlpha.900",
+        _light: "primary.900",
+        _dark: "primary.900",
       },
       opaque: {
-        _light: "whiteAlpha.900",
+        _light: "blackAlpha.900",
         _dark: "blackAlpha.900",
       },
       filled: {
-        _light: "primary.dark",
-        _dark: "primary.dark",
+        _light: "white",
+        _dark: "white",
       },
     },
     border: {
-      _light: "neutral.300",
-      _dark: "whiteAlpha.300",
+      _light: "whiteAlpha.700",
+      _dark: "whiteAlpha.700",
     },
     text: {
       primary: {
-        _light: "neutral.800",
-        _dark: "whiteAlpha.900",
+        _light: "white",
+        _dark: "white",
       },
       secondary: {
-        _light: "neutral.600",
-        _dark: "neutral.300",
+        _light: "whiteAlpha.900",
+        _dark: "whiteAlpha.900",
       },
     },
   },

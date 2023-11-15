@@ -1,27 +1,14 @@
 export const primaryColor = {
-  50: "#E6FFFA",
-  100: "#B2F5EA",
-  200: "#81E6D9",
-  300: "#4FD1C5",
-  400: "#38B2AC",
-  500: "#319795",
-  600: "#2C7A7B",
-  700: "#285E61",
-  800: "#234E52",
-  900: "#1D4044",
-};
-
-const secondaryColor = {
-  50: "#FFF5F7",
-  100: "#FED7E2",
-  200: "#FBB6CE",
-  300: "#F687B3",
-  400: "#ED64A6",
-  500: "#D53F8C",
-  600: "#B83280",
-  700: "#97266D",
-  800: "#702459",
-  900: "#521B41",
+  50: "#e0fff3",
+  100: "#b8f6df",
+  200: "#8eefc7",
+  300: "#63e8ad",
+  400: "#3be2a1",
+  500: "#22c893",
+  600: "#179c7b",
+  700: "#0b6f5f",
+  800: "#01443e",
+  900: "#001814",
 };
 
 export const colors = {
@@ -39,14 +26,8 @@ export const colors = {
   },
   primary: {
     ...primaryColor,
-    main: primaryColor[500],
+    main: primaryColor[400],
     light: primaryColor[100],
     dark: primaryColor[700],
-  },
-  secondary: {
-    ...secondaryColor,
-    main: secondaryColor[500],
-    light: secondaryColor[100],
-    dark: secondaryColor[700],
   },
 };
