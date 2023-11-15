@@ -10,7 +10,16 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   return (
     <Box display="flex" flexDirection="column" minH="100vh" bgColor="bg.body" color="text.primary">
-      <Box as="header" position="sticky" top="0" borderBottom="1px" borderColor="primary.main" bgColor="bg.opaque">
+      <Box
+        as="header"
+        position="fixed"
+        top="0"
+        left="0"
+        right="0"
+        borderBottom="1px"
+        borderColor="primary.main"
+        bgColor="bg.opaque"
+      >
         <Container
           as="nav"
           display="flex"

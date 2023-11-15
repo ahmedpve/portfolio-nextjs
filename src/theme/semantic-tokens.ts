@@ -6,12 +6,12 @@ export const semanticTokens = {
         _dark: "primary.900",
       },
       opaque: {
-        _light: "blackAlpha.900",
-        _dark: "blackAlpha.900",
+        _light: "blackAlpha.800",
+        _dark: "blackAlpha.800",
       },
-      filled: {
-        _light: "white",
-        _dark: "white",
+      overlay: {
+        _light: "rgba(0,24,20,0.9)",
+        _dark: "rgba(0,24,20,0.9)",
       },
     },
     border: {
@@ -24,8 +24,8 @@ export const semanticTokens = {
         _dark: "white",
       },
       secondary: {
-        _light: "whiteAlpha.900",
-        _dark: "whiteAlpha.900",
+        _light: "primary.50",
+        _dark: "primary.50",
       },
     },
   },

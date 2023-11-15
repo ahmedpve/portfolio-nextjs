@@ -1,14 +1,15 @@
 import Head from "next/head";
+import Home from "../components/home/home";
 import { appConfig } from "../config";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <Head>
         <title>{appConfig.title}</title>
       </Head>
 
-      <div></div>
+      <Home />
     </>
   );
 }
