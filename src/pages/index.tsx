@@ -1,4 +1,5 @@
 import Head from "next/head";
+import About from "../components/about/about";
 import Home from "../components/home/home";
 import { appConfig } from "../config";
 
@@ -6,10 +7,11 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>{appConfig.title}</title>
+        <title>{`${appConfig.title} - Professional Web Developer`}</title>
       </Head>
 
       <Home />
+      <About />
     </>
   );
 }

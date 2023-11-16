@@ -1,11 +1,11 @@
-import { Bungee, Inter, Russo_One } from "next/font/google";
+import { Inter, Poppins, Russo_One } from "next/font/google";
 
-const bungee = Bungee({ subsets: ["latin"], weight: ["400"] });
-const russoOne = Russo_One({ subsets: ["latin"], weight: ["400"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800", "900"] });
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800", "900"] });
+const russoOne = Russo_One({ subsets: ["latin"], weight: ["400"] });
 
 export const fonts = {
-  heading: russoOne.style.fontFamily,
+  heading: poppins.style.fontFamily,
   body: inter.style.fontFamily,
-  logo: bungee.style.fontFamily,
+  logo: russoOne.style.fontFamily,
 };

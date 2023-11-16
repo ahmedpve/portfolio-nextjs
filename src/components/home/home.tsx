@@ -9,6 +9,7 @@ export default function Home() {
 
   return (
     <Box
+      as="section"
       bgImage="url('/images/bg-home.webp')"
       bgAttachment="fixed"
       bgPosition="bottom"
@@ -20,7 +21,7 @@ export default function Home() {
           <Center flexDirection="column" gap="space-lg">
             <Avatar
               src={profileImg.src}
-              name={appConfig.owner}
+              name={appConfig.info.name}
               showBorder={true}
               w="40"
               h="40"
@@ -28,7 +29,7 @@ export default function Home() {
               bgColor="primary.main"
               borderColor="#ffffff !important"
             />
-            <Heading as="h1" size="xl" fontWeight="normal" textAlign="center" letterSpacing="wide">
+            <Heading as="h1" size="xl" textAlign="center" letterSpacing="wide">
               Hi 👋 I am{" "}
               <Text as="span" color="primary.main">
                 A{typingText}
@@ -45,7 +46,8 @@ export default function Home() {
                 icon={<Icon as={FaGithub} boxSize="5" />}
                 colorScheme="primary"
                 border="1px"
-                borderColor="primary.main"
+                borderColor="border"
+                borderRadius="2xl"
                 bgColor="primary.900"
               />
               <IconButton
@@ -55,7 +57,8 @@ export default function Home() {
                 icon={<Icon as={FaLinkedin} boxSize="5" />}
                 colorScheme="primary"
                 border="1px"
-                borderColor="primary.main"
+                borderColor="border"
+                borderRadius="2xl"
                 bgColor="primary.900"
               />
               <IconButton
@@ -65,7 +68,8 @@ export default function Home() {
                 icon={<Icon as={FaFacebook} boxSize="5" />}
                 colorScheme="primary"
                 border="1px"
-                borderColor="primary.main"
+                borderColor="border"
+                borderRadius="2xl"
                 bgColor="primary.900"
               />
             </Box>

@@ -16,6 +16,8 @@ export default function Layout({ children }: LayoutProps) {
         top="0"
         left="0"
         right="0"
+        zIndex="banner"
+        backdropFilter="blur(5px)"
         borderBottom="1px"
         borderColor="primary.main"
         bgColor="bg.opaque"
@@ -35,12 +37,12 @@ export default function Layout({ children }: LayoutProps) {
             display="inline-block"
             color="primary.main"
             fontFamily="logo"
-            fontSize="2xl"
+            fontSize="3xl"
             textTransform="uppercase"
             letterSpacing="wide"
           >
             {appConfig.title}
-            <Text as="span" color="text.primary" fontSize="sm">
+            <Text as="span" color="text.primary" fontSize="md">
               .com
             </Text>
           </Box>
