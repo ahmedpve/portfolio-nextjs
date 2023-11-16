@@ -97,7 +97,7 @@ export default function Layout({ children }: LayoutProps) {
       <Box as="main" flexGrow="1">
         {children}
       </Box>
-      <Box as="footer" borderTop="1px" borderColor="primary.main">
+      <Box as="footer" borderTop="1px" borderColor="border">
         <Container maxW="container.lg" py="space-sm" textAlign="center">
           {appConfig.copyright}
         </Container>
