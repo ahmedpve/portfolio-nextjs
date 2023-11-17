@@ -48,8 +48,8 @@ function SkillItem({ imageSrc, label }: SkillItemProps) {
 
 export default function Skills() {
   return (
-    <Box as="section">
-      <Container maxW="container.md" px="space-md" pt="space-xl" pb="space-2xl">
+    <Box id="skills" as="section">
+      <Container maxW="container.lg" px="space-md" pt="space-xl" pb="space-2xl">
         <SectionHeading>My Skills</SectionHeading>
         <Box display="flex" flexWrap="wrap" justifyContent="center" gap="space-sm">
           <SkillItem imageSrc={js} label="JavaScript" />

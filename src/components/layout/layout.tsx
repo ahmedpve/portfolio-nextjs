@@ -73,6 +73,17 @@ export default function Layout({ children }: LayoutProps) {
             </Box>
             <Box
               as={NextLink}
+              href="#skills"
+              fontWeight="semibold"
+              textTransform="uppercase"
+              letterSpacing="wider"
+              transitionDuration="fast"
+              _hover={{ color: "primary.main" }}
+            >
+              Skills
+            </Box>
+            <Box
+              as={NextLink}
               href="#portfolio"
               fontWeight="semibold"
               textTransform="uppercase"

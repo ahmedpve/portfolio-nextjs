@@ -1,36 +1,32 @@
-import { Box, Card, Container, Heading, Text } from "@chakra-ui/react";
+import { Box, Container, Text } from "@chakra-ui/react";
 import { appConfig } from "../../config";
+import SectionHeading from "../elements/section-heading";
 
 export default function About() {
   return (
-    <Box as="section" py="space-xl">
-      <Container maxW="container.md">
-        <Heading
-          as="h2"
-          size="md"
-          mb="space-md"
-          color="primary.main"
-          textAlign="center"
-          textTransform="uppercase"
-          letterSpacing="widest"
-        >
-          About Me
-        </Heading>
-        <Card bgColor="inherit" color="inherit">
-          <Box display="flex" justifyContent="center" alignItems="center" gap="space-md" mb="space-md">
+    <Box id="about" as="section" bgColor="bg.opaque">
+      <Container maxW="container.md" px="space-md" pt="space-xl" pb="space-2xl">
+        <SectionHeading>About Me</SectionHeading>
+        <Box>
+          <Text maxW="container.sm" mx="auto" mb="space-md" textAlign="center">
+            {appConfig.summary}
+          </Text>
+          <Box display="flex" justifyContent="center" alignItems="center" gap="space-lg">
             <Box
               display="flex"
               flexDirection="column"
               gap="1"
               border="1px"
               borderColor="border"
-              borderRadius="xl"
+              borderRadius="sm"
               p="space-sm"
               textAlign="center"
+              transitionDuration="fast"
+              _hover={{ bgColor: "primary.light", "& > *": { color: "text.inverse" } }}
             >
-              <Heading as="h3" color="primary.main" fontSize="sm" fontWeight="medium" textTransform="uppercase">
+              <Text color="primary.main" fontSize="xs" fontWeight="bold" textTransform="uppercase" letterSpacing="wide">
                 Name
-              </Heading>
+              </Text>
               <Text>{appConfig.info.name}</Text>
             </Box>
             <Box
@@ -39,13 +35,15 @@ export default function About() {
               gap="1"
               border="1px"
               borderColor="border"
-              borderRadius="xl"
+              borderRadius="sm"
               p="space-sm"
               textAlign="center"
+              transitionDuration="fast"
+              _hover={{ bgColor: "primary.light", "& > *": { color: "text.inverse" } }}
             >
-              <Heading as="h3" color="primary.main" fontSize="sm" fontWeight="medium" textTransform="uppercase">
+              <Text color="primary.main" fontSize="xs" fontWeight="bold" textTransform="uppercase" letterSpacing="wide">
                 From
-              </Heading>
+              </Text>
               <Text>{appConfig.info.from}</Text>
             </Box>
             <Box
@@ -54,20 +52,19 @@ export default function About() {
               gap="1"
               border="1px"
               borderColor="border"
-              borderRadius="xl"
+              borderRadius="sm"
               p="space-sm"
               textAlign="center"
+              transitionDuration="fast"
+              _hover={{ bgColor: "primary.light", "& > *": { color: "text.inverse" } }}
             >
-              <Heading as="h3" color="primary.main" fontSize="sm" fontWeight="medium" textTransform="uppercase">
+              <Text color="primary.main" fontSize="xs" fontWeight="bold" textTransform="uppercase" letterSpacing="wide">
                 Languages
-              </Heading>
+              </Text>
               <Text>{appConfig.info.languages}</Text>
             </Box>
           </Box>
-          <Text maxW="container.sm" m="auto" textAlign="center">
-            {appConfig.summary}
-          </Text>
-        </Card>
+        </Box>
       </Container>
     </Box>
   );

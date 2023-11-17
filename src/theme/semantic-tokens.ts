@@ -39,6 +39,6 @@ export const semanticTokens = {
     "space-md": "6",
     "space-lg": "8",
     "space-xl": "10",
-    "space-2xl": "14",
+    "space-2xl": "16",
   },
 };

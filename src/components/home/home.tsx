@@ -19,6 +19,7 @@ export default function Home() {
 
   return (
     <Box
+      id="home"
       as="section"
       overflow="hidden"
       bgImage="url('/images/bg-home.webp')"
