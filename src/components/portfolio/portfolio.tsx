@@ -2,22 +2,13 @@ import { Badge, Box, Container, Heading, Icon, IconButton, Link, Tag } from "@ch
 import Image from "next/image";
 import { FaEye, FaGithub } from "react-icons/fa6";
 import { appConfig } from "../../config";
+import SectionHeading from "../elements/section-heading";
 
 export default function Portfolio() {
   return (
-    <Box as="section" bgColor="bg.opaque">
-      <Container maxW="container.lg" px="space-md" py="space-lg">
-        <Heading
-          as="h2"
-          size="md"
-          mb="space-lg"
-          color="primary.main"
-          textAlign="center"
-          textTransform="uppercase"
-          letterSpacing="widest"
-        >
-          Recent Projects
-        </Heading>
+    <Box id="portfolio" as="section" bgColor="bg.opaque">
+      <Container maxW="container.lg" px="space-md" pt="space-xl" pb="space-2xl">
+        <SectionHeading>Recent Projects</SectionHeading>
         <Box
           display="grid"
           gridTemplateColumns="repeat(auto-fill, minmax(14rem, 22rem))"
@@ -85,8 +76,8 @@ export default function Portfolio() {
                   colorScheme="white"
                   size="lg"
                   borderRadius="full"
-                  bgColor="primary.900"
-                  _hover={{ bgColor: "primary.main", color: "primary.900" }}
+                  bgColor="bg.body"
+                  _hover={{ bgColor: "primary.main", color: "text.inverse" }}
                 />
                 {project.host && (
                   <IconButton
@@ -97,8 +88,8 @@ export default function Portfolio() {
                     colorScheme="white"
                     size="lg"
                     borderRadius="full"
-                    bgColor="primary.900"
-                    _hover={{ bgColor: "primary.main", color: "primary.900" }}
+                    bgColor="bg.body"
+                    _hover={{ bgColor: "primary.main", color: "text.inverse" }}
                   />
                 )}
               </Box>
@@ -111,7 +102,7 @@ export default function Portfolio() {
                 </Badge>
                 <Box display="flex" flexWrap="wrap" gap="space-xs">
                   {project.technologies.map((t) => (
-                    <Tag key={t} colorScheme="primary" size="sm" variant="solid" color="primary.900">{`#${t}`}</Tag>
+                    <Tag key={t} colorScheme="primary" size="sm" variant="solid" color="text.inverse">{`#${t}`}</Tag>
                   ))}
                 </Box>
               </Box>

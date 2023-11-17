@@ -87,7 +87,7 @@ export default function Layout({ children }: LayoutProps) {
             as={NextLink}
             href="#contact"
             colorScheme="primary"
-            color="primary.900"
+            color="text.inverse"
             textTransform="uppercase"
             letterSpacing="wide"
           >
@@ -120,14 +120,22 @@ export default function Layout({ children }: LayoutProps) {
               rel="noreferrer"
             >
               by vectorpouch
-            </Link>{" "}
-            &{" "}
+            </Link>
+            ,{" "}
             <Link
               href="https://www.freepik.com/free-vector/egyptian-pyramids-night-landscape-cartoon_4394561.htm"
               target="_blank"
               rel="noreferrer"
             >
               by vectorpocket
+            </Link>
+            , &{" "}
+            <Link
+              href="https://www.freepik.com/free-vector/illustration-data-analysis-graph_2825365.htm#query=my%20finance&position=24&from_view=search&track=ais&uuid=246a0300-eaea-4453-be80-ee6216e2d729"
+              target="_blank"
+              rel="noreferrer"
+            >
+              by rawpixel.com
             </Link>{" "}
             on Freepik - Many Thanks
           </Text>

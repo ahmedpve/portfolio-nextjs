@@ -15,7 +15,14 @@ import SectionHeading from "../elements/section-heading";
 
 export default function Contact() {
   return (
-    <Box as="section" bgImage="url('/images/bg-contact.webp')" bgAttachment="fixed" bgRepeat="no-repeat" bgSize="cover">
+    <Box
+      id="contact"
+      as="section"
+      bgImage="url('/images/bg-contact.webp')"
+      bgAttachment="fixed"
+      bgRepeat="no-repeat"
+      bgSize="cover"
+    >
       <Box bgColor="bg.overlay">
         <Container maxW="container.lg" px="space-md" pt="space-xl" pb="space-2xl">
           <SectionHeading>Contact Me</SectionHeading>
@@ -59,7 +66,7 @@ export default function Contact() {
             <Button
               colorScheme="primary"
               leftIcon={<Icon as={FaEnvelopeCircleCheck} boxSize="6" />}
-              color="primary.900"
+              color="text.inverse"
             >
               Send Message
             </Button>
