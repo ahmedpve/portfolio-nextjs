@@ -1,4 +1,4 @@
-import { Box, Container, Heading, Text } from "@chakra-ui/react";
+import { Box, Container, Text } from "@chakra-ui/react";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import apexcharts from "../../../public/tech-icons/apex-charts.png";
@@ -20,6 +20,7 @@ import redux from "../../../public/tech-icons/redux-svgrepo-com.svg";
 import sass from "../../../public/tech-icons/sass-svgrepo-com.svg";
 import tw from "../../../public/tech-icons/tailwind-svgrepo-com.svg";
 import ts from "../../../public/tech-icons/typescript-official-svgrepo-com.svg";
+import SectionHeading from "../elements/section-heading";
 
 type SkillItemProps = {
   imageSrc: StaticImport;
@@ -33,9 +34,9 @@ function SkillItem({ imageSrc, label }: SkillItemProps) {
       alignItems="center"
       flexDirection="column"
       gap="space-xs"
+      w="8rem"
       borderRadius="xl"
-      px="space-md"
-      py="space-sm"
+      p="space-sm"
       bgColor="bg.opaque"
       sx={{ "& > img": { transitionDuration: "normal" }, "&:hover > img": { transform: "rotateZ(360deg)" } }}
     >
@@ -48,19 +49,8 @@ function SkillItem({ imageSrc, label }: SkillItemProps) {
 export default function Skills() {
   return (
     <Box as="section">
-      <Container maxW="container.md" px="space-md" py="space-lg">
-        <Heading
-          as="h2"
-          size="md"
-          mb="space-lg"
-          color="primary.main"
-          textAlign="center"
-          textTransform="uppercase"
-          letterSpacing="widest"
-        >
-          My Skills
-        </Heading>
-
+      <Container maxW="container.md" px="space-md" pt="space-xl" pb="space-2xl">
+        <SectionHeading>My Skills</SectionHeading>
         <Box display="flex" flexWrap="wrap" justifyContent="center" gap="space-sm">
           <SkillItem imageSrc={js} label="JavaScript" />
           <SkillItem imageSrc={ts} label="TypeScript" />
