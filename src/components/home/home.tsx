@@ -1,22 +1,33 @@
-import { Avatar, Box, Center, Container, Heading, Icon, IconButton, Link, Text } from "@chakra-ui/react";
+import { Avatar, Box, Center, Container, Heading, Icon, IconButton, Link, Text, keyframes } from "@chakra-ui/react";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa6";
 import profileImg from "../../../public/images/profile-img.jpg";
 import { appConfig } from "../../config";
 import useTypingText from "../../hooks/use-typing-text";
 
+const sliderAnimation = keyframes`
+  0% {
+    transform: translateX(0%)
+  }
+  100% {
+    transform: translateX(-50%)
+  }
+`;
+
 export default function Home() {
   const { typingText } = useTypingText(appConfig.typingIntroHeading);
+  const sliderAnimationStyles = `${sliderAnimation} 3s linear infinite`;
 
   return (
     <Box
       as="section"
+      overflow="hidden"
       bgImage="url('/images/bg-home.webp')"
       bgAttachment="fixed"
       bgPosition="bottom"
       bgRepeat="no-repeat"
       bgSize="cover"
     >
-      <Box minH="100vh" bgColor="bg.overlay">
+      <Box minH="calc(100vh - 2rem)" bgColor="bg.overlay">
         <Container maxW="container.lg" pt="calc(10rem + 1vw)">
           <Center flexDirection="column" gap="space-lg">
             <Avatar
@@ -75,6 +86,23 @@ export default function Home() {
             </Box>
           </Center>
         </Container>
+      </Box>
+      <Box
+        display="flex"
+        alignItems="center"
+        h="2rem"
+        bgColor="primary.main"
+        color="primary.900"
+        fontSize="lg"
+        fontWeight="bold"
+        whiteSpace="nowrap"
+      >
+        <Text animation={sliderAnimationStyles}>
+          Foundations: Object-Oriented Programming - Data Structures and Algorithms * Languages & Frameworks &
+          Libraries: JavaScript - TypeScript - HTML - CSS - React - Next.js - Redux - Chakra UI - MUI - Tailwind CSS -
+          Sass - Mapbox - ApexCharts - Node.js - Express * Databases: MongoDB * Development Tools: Git - Postman *
+          Design Tools: Figma
+        </Text>
       </Box>
     </Box>
   );
