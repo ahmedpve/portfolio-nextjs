@@ -27,6 +27,10 @@ export const semanticTokens = {
         _light: "neutral.200",
         _dark: "neutral.200",
       },
+      inverse: {
+        _light: "primary.900",
+        _dark: "primary.900",
+      },
     },
   },
   space: {

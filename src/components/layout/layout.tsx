@@ -30,6 +30,7 @@ export default function Layout({ children }: LayoutProps) {
           alignItems="center"
           gap="space-lg"
           maxW="container.lg"
+          px="space-md"
           py="space-sm"
         >
           <Box
@@ -86,8 +87,7 @@ export default function Layout({ children }: LayoutProps) {
             as={NextLink}
             href="#contact"
             colorScheme="primary"
-            color="bg.body"
-            fontWeight="semibold"
+            color="primary.900"
             textTransform="uppercase"
             letterSpacing="wide"
           >
@@ -98,12 +98,13 @@ export default function Layout({ children }: LayoutProps) {
       <Box as="main" flexGrow="1">
         {children}
       </Box>
-      <Box as="footer" borderTop="1px" borderColor="border">
+      <Box as="footer" borderTop="1px" borderColor="border" bgColor="bg.opaque">
         <Container
           display="flex"
           justifyContent="space-between"
           alignItems="center"
           maxW="container.lg"
+          px="space-md"
           py="space-sm"
           color="text.secondary"
           fontSize="sm"

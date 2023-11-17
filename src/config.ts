@@ -37,5 +37,20 @@ export const appConfig = {
       repo: "https://github.com/ahmnedpve/bakeries-aggregator-nextjs",
       host: "https://bakeries-aggregator-nextjs.netlify.app",
     },
+    {
+      title: "Currency Exchange",
+      category: "Web App",
+      image: "/images/projects/currency-exchange.webp",
+      technologies: ["Next.js", "TypeScript", "CSS"],
+      repo: "https://github.com/ahmedpve/currency-exchange-nextjs",
+      host: "https://currency-exchange-nextjs.netlify.app",
+    },
+    {
+      title: "My Finance",
+      category: "REST API",
+      image: "/images/projects/my-finance.webp",
+      technologies: ["Node.js", "Express", "MongoDB", "JWT"],
+      repo: "https://github.com/ahmedpve/my-finance-express",
+    },
   ],
 };

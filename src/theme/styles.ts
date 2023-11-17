@@ -13,7 +13,7 @@ export const styles: GlobalStyles = {
     "#nprogress .bar": {
       zIndex: "2000",
       height: "3px",
-      backgroundColor: primaryColor[500],
+      backgroundColor: primaryColor[400],
     },
   },
 };
