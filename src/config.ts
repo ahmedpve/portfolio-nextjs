@@ -19,4 +19,24 @@ export const appConfig = {
     linkedin: "https://linkedin.com/in/ahmedpve",
     facebook: "https://facebook.com",
   },
+  projects: [
+    {
+      title: "Bakeries Aggregator Online Ordering",
+      category: "Full Stack",
+      image: "/images/projects/bakeries-aggregator.webp",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Chakra UI",
+        "SWR",
+        "React Hook Form",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "JWT",
+      ],
+      repo: "https://github.com/ahmnedpve/bakeries-aggregator-nextjs",
+      host: "https://bakeries-aggregator-nextjs.netlify.app",
+    },
+  ],
 };

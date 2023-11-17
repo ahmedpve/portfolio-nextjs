@@ -10,8 +10,8 @@ export const semanticTokens = {
         _dark: "blackAlpha.700",
       },
       overlay: {
-        _light: "rgba(0,24,20,0.9)",
-        _dark: "rgba(0,24,20,0.9)",
+        _light: "rgba(0,24,20,0.95)",
+        _dark: "rgba(0,24,20,0.95)",
       },
     },
     border: {
