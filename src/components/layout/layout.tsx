@@ -1,5 +1,6 @@
-import { Box, Button, Container, Text } from "@chakra-ui/react";
-import Link from "next/link";
+import { Box, Button, Container, Link, Text } from "@chakra-ui/react";
+import NextLink from "next/link";
+import ReactCountryFlag from "react-country-flag";
 import { appConfig } from "../../config";
 import { paths } from "../../paths";
 
@@ -32,7 +33,7 @@ export default function Layout({ children }: LayoutProps) {
           py="space-sm"
         >
           <Box
-            as={Link}
+            as={NextLink}
             href={paths.index}
             display="inline-block"
             color="primary.main"
@@ -48,7 +49,7 @@ export default function Layout({ children }: LayoutProps) {
           </Box>
           <Box as="ul" display="flex" gap="space-md">
             <Box
-              as={Link}
+              as={NextLink}
               href="#home"
               fontWeight="semibold"
               textTransform="uppercase"
@@ -59,7 +60,7 @@ export default function Layout({ children }: LayoutProps) {
               Home
             </Box>
             <Box
-              as={Link}
+              as={NextLink}
               href="#about"
               fontWeight="semibold"
               textTransform="uppercase"
@@ -70,7 +71,7 @@ export default function Layout({ children }: LayoutProps) {
               About
             </Box>
             <Box
-              as={Link}
+              as={NextLink}
               href="#portfolio"
               fontWeight="semibold"
               textTransform="uppercase"
@@ -82,7 +83,7 @@ export default function Layout({ children }: LayoutProps) {
             </Box>
           </Box>
           <Button
-            as={Link}
+            as={NextLink}
             href="#contact"
             colorScheme="primary"
             color="bg.body"
@@ -98,8 +99,37 @@ export default function Layout({ children }: LayoutProps) {
         {children}
       </Box>
       <Box as="footer" borderTop="1px" borderColor="border">
-        <Container maxW="container.lg" py="space-sm" textAlign="center">
-          {appConfig.copyright}
+        <Container
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          maxW="container.lg"
+          py="space-sm"
+          color="text.secondary"
+          fontSize="sm"
+        >
+          <Text>
+            Made in <ReactCountryFlag countryCode="EG" aria-label="Egypt" svg /> by {appConfig.info.name}
+          </Text>
+          <Text>
+            Background images are{" "}
+            <Link
+              href="https://www.freepik.com/free-vector/egypt-pharaoh-tomb-treasury-full-gold-coins_4394150.htm#page=2&query=hieroglyphs&position=46&from_view=search&track=sph"
+              target="_blank"
+              rel="noreferrer"
+            >
+              by vectorpouch
+            </Link>{" "}
+            &{" "}
+            <Link
+              href="https://www.freepik.com/free-vector/egyptian-pyramids-night-landscape-cartoon_4394561.htm"
+              target="_blank"
+              rel="noreferrer"
+            >
+              by vectorpocket
+            </Link>{" "}
+            on Freepik - Many Thanks
+          </Text>
         </Container>
       </Box>
     </Box>

@@ -1,7 +1,6 @@
 export const appConfig = {
   title: "AhmedPVE",
   description: "Work portfolio for a professional web developer.",
-  copyright: "Made in 🇪🇬 by Ahmed Rezk",
   typingIntroHeading: ["hmed Rezk", " Professional Web Developer"],
   introText:
     "A web developer from Egypt, passionate about building everything from beautiful small business websites to rich interactive web applications.",

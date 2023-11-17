@@ -24,8 +24,8 @@ export const semanticTokens = {
         _dark: "white",
       },
       secondary: {
-        _light: "primary.50",
-        _dark: "primary.50",
+        _light: "neutral.200",
+        _dark: "neutral.200",
       },
     },
   },
