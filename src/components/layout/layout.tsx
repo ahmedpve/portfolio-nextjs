@@ -1,14 +1,30 @@
-import { Box, Button, Container, Link, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerOverlay,
+  Icon,
+  IconButton,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
 import NextLink from "next/link";
-import ReactCountryFlag from "react-country-flag";
+import { FaBars } from "react-icons/fa6";
 import { appConfig } from "../../config";
 import { paths } from "../../paths";
+import Footer from "./footer";
+import NavContent from "./nav-content";
 
 type LayoutProps = {
   children: React.ReactNode;
 };
 
 export default function Layout({ children }: LayoutProps) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box display="flex" flexDirection="column" minH="100vh" bgColor="bg.body" color="text.primary">
       <Box
@@ -48,110 +64,29 @@ export default function Layout({ children }: LayoutProps) {
               .com
             </Text>
           </Box>
-          <Box as="ul" display="flex" gap="space-md">
-            <Box
-              as={NextLink}
-              href="#home"
-              fontWeight="semibold"
-              textTransform="uppercase"
-              letterSpacing="wider"
-              transitionDuration="fast"
-              _hover={{ color: "primary.main" }}
-            >
-              Home
-            </Box>
-            <Box
-              as={NextLink}
-              href="#about"
-              fontWeight="semibold"
-              textTransform="uppercase"
-              letterSpacing="wider"
-              transitionDuration="fast"
-              _hover={{ color: "primary.main" }}
-            >
-              About
-            </Box>
-            <Box
-              as={NextLink}
-              href="#skills"
-              fontWeight="semibold"
-              textTransform="uppercase"
-              letterSpacing="wider"
-              transitionDuration="fast"
-              _hover={{ color: "primary.main" }}
-            >
-              Skills
-            </Box>
-            <Box
-              as={NextLink}
-              href="#portfolio"
-              fontWeight="semibold"
-              textTransform="uppercase"
-              letterSpacing="wider"
-              transitionDuration="fast"
-              _hover={{ color: "primary.main" }}
-            >
-              Portfolio
-            </Box>
-          </Box>
-          <Button
-            as={NextLink}
-            href="#contact"
+          <NavContent display={{ base: "none", md: "contents" }} />
+          <IconButton
+            aria-label="Navigation"
+            icon={<Icon as={FaBars} />}
             colorScheme="primary"
-            color="text.inverse"
-            textTransform="uppercase"
-            letterSpacing="wide"
-          >
-            Contact Me
-          </Button>
+            display={{ base: "flex", md: "none" }}
+            onClick={onOpen}
+          />
+          <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+            <DrawerOverlay />
+            <DrawerContent bgColor="bg.opaque" color="text.primary">
+              <DrawerCloseButton />
+              <DrawerBody display="flex" flexDirection="column" alignItems="center" pt="space-2xl">
+                <NavContent sx={{ "& ul": { flexDirection: "column", alignItems: "center", py: "space-lg" } }} />
+              </DrawerBody>
+            </DrawerContent>
+          </Drawer>
         </Container>
       </Box>
       <Box as="main" flexGrow="1">
         {children}
       </Box>
-      <Box as="footer" borderTop="1px" borderColor="border" bgColor="bg.opaque">
-        <Container
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          maxW="container.lg"
-          px="space-md"
-          py="space-sm"
-          color="text.secondary"
-          fontSize="sm"
-        >
-          <Text>
-            Made in <ReactCountryFlag countryCode="EG" aria-label="Egypt" svg /> by {appConfig.info.name}
-          </Text>
-          <Text>
-            Background images are{" "}
-            <Link
-              href="https://www.freepik.com/free-vector/egypt-pharaoh-tomb-treasury-full-gold-coins_4394150.htm#page=2&query=hieroglyphs&position=46&from_view=search&track=sph"
-              target="_blank"
-              rel="noreferrer"
-            >
-              by vectorpouch
-            </Link>
-            ,{" "}
-            <Link
-              href="https://www.freepik.com/free-vector/egyptian-pyramids-night-landscape-cartoon_4394561.htm"
-              target="_blank"
-              rel="noreferrer"
-            >
-              by vectorpocket
-            </Link>
-            , &{" "}
-            <Link
-              href="https://www.freepik.com/free-vector/illustration-data-analysis-graph_2825365.htm#query=my%20finance&position=24&from_view=search&track=ais&uuid=246a0300-eaea-4453-be80-ee6216e2d729"
-              target="_blank"
-              rel="noreferrer"
-            >
-              by rawpixel.com
-            </Link>{" "}
-            on Freepik - Many Thanks
-          </Text>
-        </Container>
-      </Box>
+      <Footer />
     </Box>
   );
 }

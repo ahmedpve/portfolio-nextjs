@@ -15,7 +15,7 @@ const sliderAnimation = keyframes`
 
 export default function Home() {
   const { typingText } = useTypingText(appConfig.typingIntroHeading);
-  const sliderAnimationStyles = `${sliderAnimation} 3s linear infinite`;
+  const sliderAnimationStyles = `${sliderAnimation} 30s linear infinite`;
 
   return (
     <Box
