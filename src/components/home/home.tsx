@@ -1,4 +1,4 @@
-import { Avatar, Box, Center, Container, Heading, Icon, IconButton, Link, Text, keyframes } from "@chakra-ui/react";
+import { As, Avatar, Box, Center, Container, Heading, Icon, IconButton, Link, Text, keyframes } from "@chakra-ui/react";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa6";
 import profileImg from "../../../public/images/profile-img.jpg";
 import { appConfig } from "../../config";
@@ -34,6 +34,45 @@ const sliderAnimation = keyframes`
     transform: translateX(-100%)
   }
 `;
+
+type SocialButtonProps = {
+  icon: As;
+  href: string;
+  label: string;
+};
+
+function SocialButton({ icon, href, label }: SocialButtonProps) {
+  return (
+    <IconButton
+      as={Link}
+      href={href}
+      aria-label={label}
+      icon={<Icon as={icon} zIndex="1" boxSize="5" transitionDuration="slow" />}
+      colorScheme="primary"
+      overflow="hidden"
+      border="1px"
+      borderColor="border"
+      borderRadius="2xl"
+      bgColor="bg.body"
+      sx={{
+        "&::before": {
+          content: "''",
+          display: "inline-block",
+          position: "absolute",
+          left: "0",
+          w: "0",
+          h: "full",
+          borderRadius: "2xl",
+          bgColor: "primary.main",
+          transitionDuration: "slow",
+        },
+        "&:hover::before": { w: "full" },
+        "&:hover svg": { color: "text.inverse" },
+        "&:not(:hover)::before": { left: "auto", right: "0" },
+      }}
+    />
+  );
+}
 
 export default function Home() {
   const { typingText } = useTypingText(appConfig.typingIntroHeading);
@@ -73,39 +112,9 @@ export default function Home() {
               {appConfig.introText}
             </Text>
             <Box display="flex" alignItems="center" gap="space-md">
-              <IconButton
-                as={Link}
-                href={appConfig.social.github}
-                aria-label="Github profile"
-                icon={<Icon as={FaGithub} boxSize="5" />}
-                colorScheme="primary"
-                border="1px"
-                borderColor="border"
-                borderRadius="2xl"
-                bgColor="bg.body"
-              />
-              <IconButton
-                as={Link}
-                href={appConfig.social.linkedin}
-                aria-label="LinkedIn profile"
-                icon={<Icon as={FaLinkedin} boxSize="5" />}
-                colorScheme="primary"
-                border="1px"
-                borderColor="border"
-                borderRadius="2xl"
-                bgColor="bg.body"
-              />
-              <IconButton
-                as={Link}
-                href={appConfig.social.facebook}
-                aria-label="Facebook"
-                icon={<Icon as={FaFacebook} boxSize="5" />}
-                colorScheme="primary"
-                border="1px"
-                borderColor="border"
-                borderRadius="2xl"
-                bgColor="bg.body"
-              />
+              <SocialButton icon={FaGithub} href={appConfig.social.github} label="Github Profile" />
+              <SocialButton icon={FaLinkedin} href={appConfig.social.linkedin} label="LinkedIn Profile" />
+              <SocialButton icon={FaFacebook} href={appConfig.social.facebook} label="Facebook Profile" />
             </Box>
           </Center>
         </Container>
