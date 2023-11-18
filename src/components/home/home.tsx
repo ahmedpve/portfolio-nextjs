@@ -46,6 +46,7 @@ function SocialButton({ icon, href, label }: SocialButtonProps) {
     <IconButton
       as={Link}
       href={href}
+      target="_blank"
       aria-label={label}
       icon={<Icon as={icon} zIndex="1" boxSize="5" transitionDuration="slow" />}
       colorScheme="primary"

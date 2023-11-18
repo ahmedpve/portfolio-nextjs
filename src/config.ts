@@ -34,8 +34,8 @@ export const appConfig = {
         "MongoDB",
         "JWT",
       ],
-      repo: "https://github.com/ahmnedpve/bakeries-aggregator-nextjs",
-      host: "https://bakeries-aggregator-nextjs.netlify.app",
+      repo: "https://github.com/ahmedpve/bakeries-aggregator-nextjs",
+      host: "https://bakeries-aggregator.netlify.app",
     },
     {
       title: "Currency Exchange",
@@ -43,7 +43,7 @@ export const appConfig = {
       image: "/images/projects/currency-exchange.webp",
       technologies: ["Next.js", "TypeScript", "CSS"],
       repo: "https://github.com/ahmedpve/currency-exchange-nextjs",
-      host: "https://currency-exchange-nextjs.netlify.app",
+      host: "https://currency-exch.netlify.app",
     },
     {
       title: "My Finance",

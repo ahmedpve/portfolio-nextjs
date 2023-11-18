@@ -28,6 +28,8 @@ export default function Contact() {
           <SectionHeading>Contact Me</SectionHeading>
           <Box
             as="form"
+            name="contact"
+            method="POST"
             display="flex"
             flexDirection="column"
             gap="space-md"
@@ -38,7 +40,13 @@ export default function Contact() {
             borderRadius="md"
             p="space-md"
             bgColor="bg.opaque"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
           >
+            <input type="hidden" name="form-name" value="contact" />
+            <div hidden>
+              <input name="bot-field" />
+            </div>
             <Box display="flex" alignItems="center" gap="space-sm">
               <Center borderRadius="full" p="space-sm" bgColor="primary.light">
                 <Icon as={FaEnvelopeOpenText} boxSize="6" color="primary.dark" />
@@ -49,19 +57,19 @@ export default function Contact() {
             </Box>
             <FormControl>
               <FormLabel color="primary.light">Name</FormLabel>
-              <Input type="text" placeholder="Your name..." required />
+              <Input type="text" name="name" placeholder="Your name..." required />
             </FormControl>
             <FormControl>
               <FormLabel color="primary.light">Email</FormLabel>
-              <Input type="email" placeholder="Your email..." required />
+              <Input type="email" name="email" placeholder="Your email..." required />
             </FormControl>
             <FormControl>
               <FormLabel color="primary.light">Subject</FormLabel>
-              <Input type="text" placeholder="Message subject..." required />
+              <Input type="text" name="subject" placeholder="Message subject..." required />
             </FormControl>
             <FormControl>
               <FormLabel color="primary.light">Message</FormLabel>
-              <Textarea placeholder="Your message..." minH="10rem" required />
+              <Textarea name="message" placeholder="Your message..." minH="10rem" required />
             </FormControl>
             <Button
               colorScheme="primary"

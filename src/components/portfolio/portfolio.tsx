@@ -71,6 +71,7 @@ export default function Portfolio() {
                 <IconButton
                   as={Link}
                   href={project.repo}
+                  target="_blank"
                   aria-label="Repository"
                   icon={<Icon as={FaGithub} boxSize="6" />}
                   colorScheme="white"
@@ -83,6 +84,7 @@ export default function Portfolio() {
                   <IconButton
                     as={Link}
                     href={project.host}
+                    target="_blank"
                     aria-label="Host"
                     icon={<Icon as={FaEye} boxSize="6" />}
                     colorScheme="white"
