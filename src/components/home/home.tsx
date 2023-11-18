@@ -4,18 +4,40 @@ import profileImg from "../../../public/images/profile-img.jpg";
 import { appConfig } from "../../config";
 import useTypingText from "../../hooks/use-typing-text";
 
+const techs = [
+  "JavaScript",
+  "TypeScript",
+  "HTML",
+  "CSS",
+  "React",
+  "Next.js",
+  "Redux",
+  "Chakra UI",
+  "Material UI",
+  "Tailwind CSS",
+  "Sass",
+  "Mapbox",
+  "Apex Charts",
+  "Node.js",
+  "Express",
+  "MongoDB",
+  "Git",
+  "Postman",
+  "Figma",
+];
+
 const sliderAnimation = keyframes`
   0% {
     transform: translateX(0%)
   }
   100% {
-    transform: translateX(-50%)
+    transform: translateX(-100%)
   }
 `;
 
 export default function Home() {
   const { typingText } = useTypingText(appConfig.typingIntroHeading);
-  const sliderAnimationStyles = `${sliderAnimation} 30s linear infinite`;
+  const sliderAnimationStyles = `${sliderAnimation} 200s linear infinite`;
 
   return (
     <Box
@@ -60,7 +82,7 @@ export default function Home() {
                 border="1px"
                 borderColor="border"
                 borderRadius="2xl"
-                bgColor="primary.900"
+                bgColor="bg.body"
               />
               <IconButton
                 as={Link}
@@ -71,7 +93,7 @@ export default function Home() {
                 border="1px"
                 borderColor="border"
                 borderRadius="2xl"
-                bgColor="primary.900"
+                bgColor="bg.body"
               />
               <IconButton
                 as={Link}
@@ -82,7 +104,7 @@ export default function Home() {
                 border="1px"
                 borderColor="border"
                 borderRadius="2xl"
-                bgColor="primary.900"
+                bgColor="bg.body"
               />
             </Box>
           </Center>
@@ -93,16 +115,18 @@ export default function Home() {
         alignItems="center"
         h="2rem"
         bgColor="primary.main"
-        color="primary.900"
-        fontSize="lg"
-        fontWeight="bold"
+        color="text.inverse"
+        fontWeight="medium"
         whiteSpace="nowrap"
       >
         <Text animation={sliderAnimationStyles}>
-          Foundations: Object-Oriented Programming - Data Structures and Algorithms * Languages & Frameworks &
-          Libraries: JavaScript - TypeScript - HTML - CSS - React - Next.js - Redux - Chakra UI - MUI - Tailwind CSS -
-          Sass - Mapbox - ApexCharts - Node.js - Express * Databases: MongoDB * Development Tools: Git - Postman *
-          Design Tools: Figma
+          {[...techs, ...techs, ...techs, ...techs, ...techs, ...techs, ...techs, ...techs, ...techs, ...techs].map(
+            (t, i) => (
+              <Box as="span" key={i}>
+                {t}&nbsp;&nbsp;*&nbsp;&nbsp;
+              </Box>
+            )
+          )}
         </Text>
       </Box>
     </Box>

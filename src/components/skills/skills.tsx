@@ -56,13 +56,13 @@ export default function Skills() {
           <SkillItem imageSrc={ts} label="TypeScript" />
           <SkillItem imageSrc={html} label="HTML" />
           <SkillItem imageSrc={css} label="CSS" />
-          <SkillItem imageSrc={sass} label="Sass" />
           <SkillItem imageSrc={react} label="React" />
           <SkillItem imageSrc={nextjs} label="Nextjs" />
           <SkillItem imageSrc={redux} label="Redux" />
           <SkillItem imageSrc={chakraui} label="ChakraUI" />
           <SkillItem imageSrc={tw} label="Tailwind CSS" />
           <SkillItem imageSrc={mui} label="MUI" />
+          <SkillItem imageSrc={sass} label="Sass" />
           <SkillItem imageSrc={mapbox} label="Mapbox" />
           <SkillItem imageSrc={apexcharts} label="Apex Charts" />
           <SkillItem imageSrc={nodejs} label="Nodejs" />
