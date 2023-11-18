@@ -72,6 +72,7 @@ export default function Contact() {
               <Textarea name="message" placeholder="Your message..." minH="10rem" required />
             </FormControl>
             <Button
+              type="submit"
               colorScheme="primary"
               leftIcon={<Icon as={FaEnvelopeCircleCheck} boxSize="6" />}
               color="text.inverse"
