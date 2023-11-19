@@ -99,6 +99,7 @@ export default function Home() {
           <Center flexDirection="column" gap="space-lg">
             <Avatar
               ref={animatedAvatar}
+              className="slide-right-transition"
               src={profileImg.src}
               name={appConfig.info.name}
               showBorder={true}
@@ -108,13 +109,26 @@ export default function Home() {
               bgColor="primary.main"
               borderColor="#ffffff !important"
             />
-            <Heading ref={animatedHeading} as="h1" size="xl" textAlign="center" letterSpacing="wide">
+            <Heading
+              ref={animatedHeading}
+              className="slide-left-transition"
+              as="h1"
+              size="xl"
+              textAlign="center"
+              letterSpacing="wide"
+            >
               Hi 👋 I am{" "}
               <Text as="span" color="primary.main">
                 A{typingText}
               </Text>
             </Heading>
-            <Text ref={animatedParagraph} color="text.secondary" fontSize="xl" textAlign="center">
+            <Text
+              ref={animatedParagraph}
+              className="slide-up-transition"
+              color="text.secondary"
+              fontSize="xl"
+              textAlign="center"
+            >
               {appConfig.introText}
             </Text>
             <Box display="flex" alignItems="center" gap="space-md">
