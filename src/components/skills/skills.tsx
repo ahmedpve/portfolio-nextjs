@@ -20,6 +20,7 @@ import redux from "../../../public/tech-icons/redux-svgrepo-com.svg";
 import sass from "../../../public/tech-icons/sass-svgrepo-com.svg";
 import tw from "../../../public/tech-icons/tailwind-svgrepo-com.svg";
 import ts from "../../../public/tech-icons/typescript-official-svgrepo-com.svg";
+import useAnimateOnScroll from "../../hooks/use-animate-onscroll";
 import SectionHeading from "../elements/section-heading";
 
 type SkillItemProps = {
@@ -47,25 +48,27 @@ function SkillItem({ imageSrc, label }: SkillItemProps) {
 }
 
 export default function Skills() {
+  const { animatedElement: animatedCards } = useAnimateOnScroll<HTMLDivElement>("slide-up");
+
   return (
     <Box id="skills" as="section">
       <Container maxW="container.lg" px="space-md" pt="space-xl" pb="space-2xl">
         <SectionHeading>My Skills</SectionHeading>
-        <Box display="flex" flexWrap="wrap" justifyContent="center" gap="space-sm">
+        <Box ref={animatedCards} display="flex" flexWrap="wrap" justifyContent="center" gap="space-sm">
           <SkillItem imageSrc={js} label="JavaScript" />
           <SkillItem imageSrc={ts} label="TypeScript" />
           <SkillItem imageSrc={html} label="HTML" />
           <SkillItem imageSrc={css} label="CSS" />
           <SkillItem imageSrc={react} label="React" />
-          <SkillItem imageSrc={nextjs} label="Nextjs" />
+          <SkillItem imageSrc={nextjs} label="Next.js" />
           <SkillItem imageSrc={redux} label="Redux" />
           <SkillItem imageSrc={chakraui} label="ChakraUI" />
-          <SkillItem imageSrc={tw} label="Tailwind CSS" />
           <SkillItem imageSrc={mui} label="MUI" />
+          <SkillItem imageSrc={tw} label="Tailwind CSS" />
           <SkillItem imageSrc={sass} label="Sass" />
           <SkillItem imageSrc={mapbox} label="Mapbox" />
           <SkillItem imageSrc={apexcharts} label="Apex Charts" />
-          <SkillItem imageSrc={nodejs} label="Nodejs" />
+          <SkillItem imageSrc={nodejs} label="Node.js" />
           <SkillItem imageSrc={express} label="Express" />
           <SkillItem imageSrc={mongodb} label="MongoDB" />
           <SkillItem imageSrc={git} label="Git" />

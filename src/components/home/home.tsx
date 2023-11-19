@@ -2,6 +2,7 @@ import { As, Avatar, Box, Center, Container, Heading, Icon, IconButton, Link, Te
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa6";
 import profileImg from "../../../public/images/profile-img.jpg";
 import { appConfig } from "../../config";
+import useAnimateOnScroll from "../../hooks/use-animate-onscroll";
 import useTypingText from "../../hooks/use-typing-text";
 
 const techs = [
@@ -77,6 +78,9 @@ function SocialButton({ icon, href, label }: SocialButtonProps) {
 
 export default function Home() {
   const { typingText } = useTypingText(appConfig.typingIntroHeading);
+  const { animatedElement: animatedAvatar } = useAnimateOnScroll<HTMLDivElement>("slide-right");
+  const { animatedElement: animatedHeading } = useAnimateOnScroll<HTMLDivElement>("slide-left");
+  const { animatedElement: animatedParagraph } = useAnimateOnScroll<HTMLDivElement>("slide-up");
   const sliderAnimationStyles = `${sliderAnimation} 200s linear infinite`;
 
   return (
@@ -94,6 +98,7 @@ export default function Home() {
         <Container maxW="container.lg" pt="calc(10rem + 1vw)">
           <Center flexDirection="column" gap="space-lg">
             <Avatar
+              ref={animatedAvatar}
               src={profileImg.src}
               name={appConfig.info.name}
               showBorder={true}
@@ -103,13 +108,13 @@ export default function Home() {
               bgColor="primary.main"
               borderColor="#ffffff !important"
             />
-            <Heading as="h1" size="xl" textAlign="center" letterSpacing="wide">
+            <Heading ref={animatedHeading} as="h1" size="xl" textAlign="center" letterSpacing="wide">
               Hi 👋 I am{" "}
               <Text as="span" color="primary.main">
                 A{typingText}
               </Text>
             </Heading>
-            <Text color="text.secondary" fontSize="xl" textAlign="center">
+            <Text ref={animatedParagraph} color="text.secondary" fontSize="xl" textAlign="center">
               {appConfig.introText}
             </Text>
             <Box display="flex" alignItems="center" gap="space-md">

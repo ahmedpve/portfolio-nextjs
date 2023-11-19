@@ -11,9 +11,11 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import { FaEnvelopeCircleCheck, FaEnvelopeOpenText } from "react-icons/fa6";
+import useAnimateOnScroll from "../../hooks/use-animate-onscroll";
 import SectionHeading from "../elements/section-heading";
 
 export default function Contact() {
+  const { animatedElement: animatedForm } = useAnimateOnScroll<HTMLDivElement>("slide-up");
   return (
     <Box
       id="contact"
@@ -27,6 +29,7 @@ export default function Contact() {
         <Container maxW="container.lg" px="space-md" pt="space-xl" pb="space-2xl">
           <SectionHeading>Contact Me</SectionHeading>
           <Box
+            ref={animatedForm}
             as="form"
             name="contact"
             method="POST"

@@ -4,6 +4,7 @@ import Head from "next/head";
 import Layout from "../components/layout/layout";
 import { appConfig } from "../config";
 import useNprogress from "../hooks/use-nprogress";
+import "../styles/animations.css";
 import { theme } from "../theme";
 
 export default function App({ Component, pageProps }: AppProps) {

@@ -1,8 +1,11 @@
 import { Box, Container, Text } from "@chakra-ui/react";
 import { appConfig } from "../../config";
+import useAnimateOnScroll from "../../hooks/use-animate-onscroll";
 import SectionHeading from "../elements/section-heading";
 
 export default function About() {
+  const { animatedElement: animatedCards } = useAnimateOnScroll<HTMLDivElement>("slide-up");
+
   return (
     <Box id="about" as="section" bgColor="bg.opaque">
       <Container maxW="container.md" px="space-md" pt="space-xl" pb="space-2xl">
@@ -11,7 +14,7 @@ export default function About() {
           <Text maxW="container.sm" mx="auto" mb="space-md" textAlign="center">
             {appConfig.summary}
           </Text>
-          <Box display="flex" justifyContent="center" alignItems="center" gap="space-lg">
+          <Box ref={animatedCards} display="flex" justifyContent="center" alignItems="center" gap="space-lg">
             <Box
               display="flex"
               flexDirection="column"
